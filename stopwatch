@@ -1,0 +1,37 @@
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <iomanip>
+
+using namespace std;
+using clock_type = chrono::steady_clock;
+
+int main() {
+    cout << "按 Enter 开始计时..." << endl;
+    cin.get();
+
+    auto start = clock_type::now();
+    cout << "计时开始！再按 Enter 停止。" << endl;
+
+    cin.get();
+    auto end = clock_type::now();
+
+    auto duration =
+        chrono::duration_cast<chrono::milliseconds>(end - start);
+
+    long long ms = duration.count();
+    long long hours = ms / 3'600'000;
+    ms %= 3'600'000;
+    long long minutes = ms / 60'000;
+    ms %= 60'000;
+    long long seconds = ms / 1'000;
+    ms %= 1'000;
+
+    cout << "耗时: "
+         << setfill('0') << setw(2) << hours << ":"
+         << setw(2) << minutes << ":"
+         << setw(2) << seconds << "."
+         << setw(3) << ms << endl;
+
+    return 0;
+}
