@@ -52,3 +52,7 @@ void display(int* field){
       printf("\n");
     }
 }
+
+void moveDown(int[] field) {
+    
+}
