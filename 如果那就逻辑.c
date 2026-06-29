@@ -20,4 +20,15 @@ int main(){
 int c = (b==2);
 
   printf("%i", c);
+
+// while 逻辑
+while(b< 5){
+  b = b+1;
+  printf("%i", b);
+}
+
+  //for 逻辑
+  for(int x = 0; x<5; x=x+1){
+    printf("%i and", x);
+  }
 }
