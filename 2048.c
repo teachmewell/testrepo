@@ -81,7 +81,7 @@ tochange = tochange+amountperchange;
 gouprec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
-field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
+field[tochange + amountperchange] = field[tochange + amountperchange]<<1;
   field[tochange]=0;
 tochange = tochange + amountperchange;
 gouprec(field, tochange, amountperchange); return;}
@@ -91,7 +91,7 @@ gouprec(field, tochange, amountperchange); return;}
 
 void godown(int field[]) {
 int amountperchange = 4;
-for(int i=15; i>0; i--){godownrec(field, i, amountperchange); }
+for(int i=15; i>0; i=i-1){godownrec(field, i, amountperchange); }
 }
 
 void godownrec(int field[], int tochange, int amountperchange){
@@ -105,7 +105,7 @@ tochange = tochange+amountperchange;
 godownrec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
-field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
+field[tochange + amountperchange] = field[tochange + amountperchange]<<1;
   field[tochange]=0;
 tochange = tochange + amountperchange;
 godownrec(field, tochange, amountperchange); return;}
@@ -114,9 +114,11 @@ godownrec(field, tochange, amountperchange); return;}
 
 void goright(int field[]){
 int amountperchange = 1;
-for(int i=14; i!=2; i=i-4){gorightrec(field, i, amountperchange);}
-for(int i=13; i!=1; i=i-4){gorightrec(field, i, amountperchange);}
-for(int i=12; i!=0; i=i-4){gorightrec(field, i, amountperchange);}
+
+for(int i=15; i!=3; i=i-1){gorightrec(field, i, amountperchange);}
+for(int i=14; i!=2; i=i-1){gorightrec(field, i, amountperchange);}
+for(int i=13; i!=1; i=i-1){gorightrec(field, i, amountperchange);}
+for(int i=12; i!=0; i=i-1){gorightrec(field, i, amountperchange);}
 }
 
 void gorightrec(int field[], int tochange, int amountperchange){
@@ -130,7 +132,7 @@ tochange = tochange+amountperchange;
 gorightrec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
-field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
+field[tochange + amountperchange] = field[tochange + amountperchange]<<1;
   field[tochange]=0;
 tochange = tochange + amountperchange;
 gorightrec(field, tochange, amountperchange); return;}
@@ -140,9 +142,11 @@ gorightrec(field, tochange, amountperchange); return;}
 
 void goleft(int field[]){
 int amountperchange = -1;
-for(int i=1; i!=13; i=i+4){goleftrec(field, i, amountperchange);}
-for(int i=2; i!=14; i=i+4){goleftrec(field, i, amountperchange);}
-for(int i=3; i!=15; i=i+4){goleftrec(field, i, amountperchange);}
+
+for(int i=0; i!=4; i++){goleftrec(field, i, amountperchange);}
+for(int i=4; i!=7; i++){goleftrec(field, i, amountperchange);}
+for(int i=8; i!=11; i++){goleftrec(field, i, amountperchange);}
+for(int i=12; i!=16; i++){goleftrec(field, i, amountperchange);}
 }
 
 void goleftrec(int field[], int tochange, int amountperchange){
@@ -156,7 +160,7 @@ tochange = tochange+amountperchange;
 goleftrec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
-field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
+field[tochange + amountperchange] = field[tochange + amountperchange]<<1;
   field[tochange]=0;
 tochange = tochange + amountperchange;
 goleftrec(field, tochange, amountperchange); return;}
