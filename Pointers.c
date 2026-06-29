@@ -24,7 +24,7 @@ int main(){
 int abc = 3;
 int w = *(&abc +1);
 int* x = &(abc);
-int* y = (int*) 4;
+int* y = (int*) 4; // (int*) 是一个 type cast。 本来他是一个 int, 我强制把它编程了一个 int pointer。 
 int z = (int) abc;
 
 
