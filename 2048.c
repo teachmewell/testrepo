@@ -104,22 +104,29 @@ void display(int field[], int steps){
 }
 
 //___________________________________________________________________________________________________以下是我所有改变 array 的公式。
-//________________________________________________________________________________________ go up
+//________________________________________________________________________________________ go up : input = array 的地址， 它给array每个数字都单独叫 gouprec 。
 void goup(int field[]){
 int amountperchange = -4;
 for(int i=0; i<15; i++){gouprec(field, i, amountperchange); }
 }
 
+//________________________________________________________________________________________ go up rec: tochange是arraz中你想要改变的数字。
 void gouprec(int field[], int tochange, int amountperchange){
+
+  //_____________________________________________________________________________如果数字出需要考虑的范围（边上或 array 外面）
 if(tochange < 4 || tochange > 15){return;}
+
+  //_______________________________________________________________________________如果tochange 数据是0 (就是没数据情况)， 那就不需要在改了。
 else if(field[tochange] == 0){  return; }
 
+  ///___________________________________________________________________________________如果它旁边的格子是空的，把数字移到旁边，在查看旁边是否还能移 
 if(field[tochange + amountperchange]==0){
 field[tochange + amountperchange] = field[tochange];
 field[tochange]=0;
 tochange = tochange+amountperchange;
 gouprec(field, tochange, amountperchange); return; }
 
+  //______________________________________________________________________________如果旁边和自己一样，那把旁边的格子 *2 和把自己格子变成 0
 if(field[tochange+ amountperchange] == field[tochange]){
 field[tochange + amountperchange] = field[tochange + amountperchange]<<1;
   field[tochange]=0;
