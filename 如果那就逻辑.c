@@ -17,7 +17,7 @@ int main(){
   if( a == 1) { printf(" a is 1 "); }
   if( a < b) { printf(" a smaller b "); }
   if( a < (2+1) ) { printf(" a smaller 2 "); }
+int c = (b==2);
 
-
-  
+  printf("%i", c);
 }
