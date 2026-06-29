@@ -3,6 +3,8 @@
 
 void display(int field[], int steps);
 int addElement(int field[]);
+int getposofnum(int num);
+int newnum(int range);
 void goup(int field[]);
 void godown(int field[]);
 void goleft(int field[]);
@@ -28,10 +30,10 @@ while(1) {
   display(field, steps);
 while(1){
 scanf(" %c", &text);
-if( text == 's'  ){ goup(field); break;}
-else if(text == 'x'){godown(field); break;}
-else if( text == 'z' ){goleft(field); break;}
-else if( text == 'y' ){goright(field); break;}
+if( text == 's' || text == 'u' ){ goup(field); break;}
+else if( text == 'x' || text == 'd'){godown(field); break;}
+else if( text == 'z' || text == 'l'){goleft(field); break;}
+else if( text == 'y' || text == 'r'){goright(field); break;}
 else{printf("failed. Write one of: s, x, z, y. \n");}
 }
   if(!addElement(field)){break;}
@@ -43,28 +45,42 @@ else{printf("failed. Write one of: s, x, z, y. \n");}
 
 int addElement(int field[]){
   int res = 0;
+int biggest = 2;
   int indexes[16]= {0};
   for(int i=0; i<16; i++){
+if(field[i]> biggest){biggest= field[i];}
     if(field[i]== 0){ indexes[res]=i; res++;}
   }
 if(res==0){return 0;}
 
  int k = rand() % res;
-  field[ indexes[k] ] = 2;
+  field[ indexes[k] ] = newnum( getposofnum(biggest) );
   return 1;
+}
+
+int getposofnum(int num){
+int pos=0;
+while(1){
+if((num%2) == 1 ){return pos;}
+else{num = num>>1; pos++;}
+}
+}
+
+int newnum(int range){
+int shifts = (rand() % range);
+return 1<< shifts;
 }
 
 void display(int field[], int steps){
   printf("\n after %i steps : \n", steps);
     for(int a = 0; a < 13; a=a+4){
-      printf("%i ", field[a]);
-      printf("%i ",field[a+1]);
-      printf("%i ",field[a+2]);
-      printf("%i ",field[a+3]);
+      printf("%4i ", field[a]);
+      printf("%4i ",field[a+1]);
+      printf("%4i ",field[a+2]);
+      printf("%4i ",field[a+3]);
       printf("\n");
     }
 }
-
 void goup(int field[]){
 int amountperchange = -4;
 for(int i=0; i<15; i++){gouprec(field, i, amountperchange); }
