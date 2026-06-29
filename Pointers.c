@@ -32,11 +32,11 @@ int z = (int) abc;
 //  求 abc, w, x , y, z 的 adress, value 和 叫他时有效范围。
 
 
-printf("%i", w);
-  printf("%i", abc);
-  printf("%p", x);
-  printf("%i", (*x));
-  printf("%p", y);
-printf("%i", z);
-printf("%p", &z);
+printf("this is w:  %i \n", w);
+  printf("this is abc: %i \n", abc);
+  printf(" this is x: %p \n", x);
+  printf("this is *x : %i \n", (*x));
+  printf("this is y : %p \n", y);
+printf("this is z : %i \n", z);
+printf("this is &z : %p \n", &z);
 }
