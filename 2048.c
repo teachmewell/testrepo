@@ -115,10 +115,7 @@ godownrec(field, tochange, amountperchange); return;}
 void goright(int field[]){
 int amountperchange = 1;
 
-for(int i=15; i!=3; i=i-1){gorightrec(field, i, amountperchange);}
-for(int i=14; i!=2; i=i-1){gorightrec(field, i, amountperchange);}
-for(int i=13; i!=1; i=i-1){gorightrec(field, i, amountperchange);}
-for(int i=12; i!=0; i=i-1){gorightrec(field, i, amountperchange);}
+for(int i=15; i>=0; i=i-1){gorightrec(field, i, amountperchange);}
 }
 
 void gorightrec(int field[], int tochange, int amountperchange){
@@ -143,10 +140,7 @@ gorightrec(field, tochange, amountperchange); return;}
 void goleft(int field[]){
 int amountperchange = -1;
 
-for(int i=0; i!=4; i++){goleftrec(field, i, amountperchange);}
-for(int i=4; i!=7; i++){goleftrec(field, i, amountperchange);}
-for(int i=8; i!=11; i++){goleftrec(field, i, amountperchange);}
-for(int i=12; i!=16; i++){goleftrec(field, i, amountperchange);}
+for(int i=0; i<16; i++){goleftrec(field, i, amountperchange);}
 }
 
 void goleftrec(int field[], int tochange, int amountperchange){
