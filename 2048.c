@@ -78,13 +78,13 @@ if(field[tochange + amountperchange]==0){
 field[tochange + amountperchange] = field[tochange];
 field[tochange]=0;
 tochange = tochange+amountperchange;
-gouprec(field, tochange+amountperchange, amountperchange); return; }
+gouprec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
 field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
   field[tochange]=0;
 tochange = tochange + amountperchange;
-gouprec(field, tochange+amountperchange, amountperchange); return;}
+gouprec(field, tochange, amountperchange); return;}
 
 }
 
@@ -102,13 +102,13 @@ if(field[tochange + amountperchange]==0){
 field[tochange + amountperchange] = field[tochange];
 field[tochange]=0;
 tochange = tochange+amountperchange;
-godownrec(field, tochange+amountperchange, amountperchange); return; }
+godownrec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
 field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
   field[tochange]=0;
 tochange = tochange + amountperchange;
-godownrec(field, tochange+amountperchange, amountperchange); return;}
+godownrec(field, tochange, amountperchange); return;}
 
 }
 
@@ -127,13 +127,13 @@ if(field[tochange + amountperchange]==0){
 field[tochange + amountperchange] = field[tochange];
 field[tochange]=0;
 tochange = tochange+amountperchange;
-gorightrec(field, tochange+amountperchange, amountperchange); return; }
+gorightrec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
 field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
   field[tochange]=0;
 tochange = tochange + amountperchange;
-gorightrec(field, tochange+amountperchange, amountperchange); return;}
+gorightrec(field, tochange, amountperchange); return;}
 
 
 }
@@ -153,12 +153,12 @@ if(field[tochange + amountperchange]==0){
 field[tochange + amountperchange] = field[tochange];
 field[tochange]=0;
 tochange = tochange+amountperchange;
-goleftrec(field, tochange+amountperchange, amountperchange); return; }
+goleftrec(field, tochange, amountperchange); return; }
 
 if(field[tochange+ amountperchange] == field[tochange]){
 field[tochange + amountperchange] = field[tochange + amountperchange]<<2;
   field[tochange]=0;
 tochange = tochange + amountperchange;
-goleftrec(field, tochange+amountperchange, amountperchange); return;}
+goleftrec(field, tochange, amountperchange); return;}
 
 }
