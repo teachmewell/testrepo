@@ -29,9 +29,9 @@ int z = (int) abc;
 
 
 //假设电脑每次找最小的可以改变数据的位置保存新的内容，
-//  求 abc, w, x , y, z 的 adress, value 和 叫他时有效范围。
+//  求 abc, w, x , y, z 的 adress 和 value 
 
-
+// 跑这个得 value
 printf("this is w:  %i \n", w);
   printf("this is abc: %i \n", abc);
   printf(" this is x: %p \n", x);
