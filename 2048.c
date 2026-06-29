@@ -1,6 +1,8 @@
+//______________________________________________________这里利用了C语言的基础图书馆 (standard library), 她给我们提供像 printf 的公式。_____________
 #include <stdio.h>
 #include <stdlib.h>
 
+//_____________________________________________________________________当前不重要。这里写着我所有想在未来用的公示名_________________________
 void display(int field[], int steps);
 int addElement(int field[]);
 int getposofnum(int num);
@@ -14,28 +16,40 @@ void godownrec(int field[], int tochange, int amountperchange);
 void gorightrec(int field[], int tochange, int amountperchange);
 void goleftrec(int field[], int tochange, int amountperchange);
 
+//____________________________________________________________________________________所有C语言从 int main() function 开头。_____________
+// ______________________________________________________________________________想知道跑的时候发生什么就从这里开头。________________
+
 //所有C 程序都从int main() 开始
 int main(){
 int steps = 0;
 
-//设一个array
+//___________________________________________________________________________________________________________设一个array
 //int field[4][4]= {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0} };
 int field[16]= {0};
   // print
 printf("enter one of: s, x, z, y ， u, d, l, r");
 
-// 得到输入  上下左右
+// _________________________________________________________________________________________得到输入  上下左右
 char text;
 while(1) {
   display(field, steps);
 while(1){
+
+  //____________________________________________________________________________scanf : 读一个 char。
 scanf(" %c", &text);
+
+  //________________________________________________________________________________________如果是其中一个，那就跑他的function
 if( text == 's' || text == 'u' ){ goup(field); break;}
 else if( text == 'x' || text == 'd'){godown(field); break;}
 else if( text == 'z' || text == 'l'){goleft(field); break;}
 else if( text == 'y' || text == 'r'){goright(field); break;}
+
+//  ___________________________________________________________________________________________________若输入不符合要求: 让 while 从新输入。
 else{printf("failed. Write one of: s, x, z, y ， u, d, l, r. \n");}
 }
+
+
+  
   if(!addElement(field)){break;}
     steps++;
 }
@@ -43,6 +57,10 @@ else{printf("failed. Write one of: s, x, z, y ， u, d, l, r. \n");}
   return 1;
 }
 
+
+// ___________________________________________________________________________以下是我的functions，定义我在main里写的东西。___________________________________
+
+// _____________________________________________________function 1: add Element
 int addElement(int field[]){
   int res = 0;
 int biggest = 2;
@@ -58,6 +76,7 @@ if(res==0){return 0;}
   return 1;
 }
 
+//______________________________________________________________function 1: get index of 1 
 int getposofnum(int num){
 int pos=0;
 while(1){
@@ -66,11 +85,13 @@ else{num = num>>1; pos++;}
 }
 }
 
+//________________________________________________________________________ random number 
 int newnum(int range){
 int shifts = (rand() % range);
 return 1<< shifts;
 }
 
+//_________________________________________________________________________ 我所有的 printf 
 void display(int field[], int steps){
   printf("\n after %i steps : \n", steps);
     for(int a = 0; a < 13; a=a+4){
@@ -81,6 +102,9 @@ void display(int field[], int steps){
       printf("\n");
     }
 }
+
+//___________________________________________________________________________________________________以下是我所有改变 array 的公式。
+//________________________________________________________________________________________ go up
 void goup(int field[]){
 int amountperchange = -4;
 for(int i=0; i<15; i++){gouprec(field, i, amountperchange); }
