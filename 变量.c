@@ -16,13 +16,15 @@
 int main(){
 
   //// TODO 你在这里建立四个变量，叫 charvar , intvar , floatvar , doublevar 
-
-  
-  
+    char charvar;
+    int intvar;
+    float floatvar;
+    double doublevar;
   //// TODO 你在这里给他们设一个数字
-
-
-
+    charvar = "Hello World!";
+    intvar = 1;
+    floatvar = 3.141592653589793238462;
+    doublevar = 3.141592653589793238462;
   printf( "%c", charvar ); 
   printf( "%i", intvar ); 
     printf( "%f", floatvar ); 
