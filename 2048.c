@@ -107,7 +107,7 @@ gouprec(field, tochange, amountperchange); return;}
 
 void godown(int field[]) {
 int amountperchange = 4;
-for(int i=15; i>0; i=i-1){godownrec(field, i, amountperchange); }
+for(int i=15; i>=0; i=i-1){godownrec(field, i, amountperchange); }
 }
 
 void godownrec(int field[], int tochange, int amountperchange){
