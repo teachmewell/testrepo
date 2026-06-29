@@ -22,7 +22,7 @@ int steps = 0;
 //int field[4][4]= {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0} };
 int field[16]= {0};
   // print
-printf("enter one of: s, x, z, y");
+printf("enter one of: s, x, z, y ， u, d, l, r");
 
 // 得到输入  上下左右
 char text;
@@ -34,7 +34,7 @@ if( text == 's' || text == 'u' ){ goup(field); break;}
 else if( text == 'x' || text == 'd'){godown(field); break;}
 else if( text == 'z' || text == 'l'){goleft(field); break;}
 else if( text == 'y' || text == 'r'){goright(field); break;}
-else{printf("failed. Write one of: s, x, z, y. \n");}
+else{printf("failed. Write one of: s, x, z, y ， u, d, l, r. \n");}
 }
   if(!addElement(field)){break;}
     steps++;
